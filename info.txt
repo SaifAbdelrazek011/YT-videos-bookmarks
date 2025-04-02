@@ -1,0 +1,11 @@
+manifest files
+// manifest.json
+permissions:
+    - storage
+    - activeTab
+    - contextMenus
+    - tabs
+    - webRequest
+    - webRequestBlocking
+    - http://*/* 
+    - https://*/*
