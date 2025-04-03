@@ -12,7 +12,9 @@
     } else if (type === "PLAY") {
       youtubePlayer.currentTime = value;
     } else if (type === "DELETE") {
-      currentVideoBookmarks.filter((bookmark) => bookmark.time !== value);
+      currentVideoBookmarks = currentVideoBookmarks.filter(
+        (bookmark) => bookmark.time != value
+      );
       chrome.storage.sync.set({
         [currentVideo]: JSON.stringify(currentVideoBookmarks),
       });
@@ -61,7 +63,11 @@
     currentVideoBookmarks = await fetchBookmarks();
 
     console.log("New Bookmark: ", newBookmark);
-
+    if (currentVideoBookmarks.length > 0) {
+      currentVideoBookmarks = currentVideoBookmarks.filter(
+        (bookmark) => bookmark.time !== currentTime
+      );
+    }
     chrome.storage.sync.set({
       [currentVideo]: JSON.stringify(
         [...currentVideoBookmarks, newBookmark].sort((a, b) => a.time - b.time)
