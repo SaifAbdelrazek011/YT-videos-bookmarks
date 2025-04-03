@@ -1,5 +1,5 @@
 {
-  "name": "Youtube Video Bookmarks",
+  "name": "YT-Video-Bookmarks",
   "version": "1.0",
   "description": "Saving timestamps of Youtube videos",
   "manifest_version": 3,
@@ -31,7 +31,7 @@
       "24": "assets/ext-icon.png",
       "32": "assets/ext-icon.png"
     },
-    "default_title": "Youtube Video Bookmarks",
+    "default_title": "YT-Videos-Bookmarks",
     "default_popup": "popup.html"
   }
 }
