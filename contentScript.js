@@ -62,7 +62,6 @@
 
     currentVideoBookmarks = await fetchBookmarks();
 
-    console.log("New Bookmark: ", newBookmark);
     if (currentVideoBookmarks.length > 0) {
       currentVideoBookmarks = currentVideoBookmarks.filter(
         (bookmark) => bookmark.time !== currentTime
@@ -81,6 +80,4 @@
 
     return date.toISOString().substr(11, 8); // format: 00:00:00
   };
-
-  console.log("Content script loaded");
 })();

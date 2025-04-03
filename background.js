@@ -7,7 +7,6 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     const videoId = url.searchParams.get("v");
 
     if (videoId) {
-      console.log("Sending Video ID:", videoId);
       chrome.tabs.sendMessage(tabId, {
         type: "NEW",
         videoId: videoId,
@@ -15,5 +14,3 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     }
   }
 });
-
-console.log("Background script loaded");
